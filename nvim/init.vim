@@ -11,6 +11,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'rafamadriz/friendly-snippets'
+Plug 'tpope/vim-fugitive' " git
 Plug 'ryanoasis/vim-devicons' " this has to be last one
 call plug#end()
 
@@ -51,5 +52,9 @@ nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 vnoremap <leader>fs <cmd>Telescope grep_string<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
+
+" vim-fugitive helping with git merge
+nmap <leader>gh :diffget //2<CR>
+nmap <leader>gl :diffget //3<CR>
 
 lua require("lsp-config")
