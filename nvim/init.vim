@@ -35,9 +35,14 @@ set iskeyword+=- " treat - as a part of word  the same as _ so eg this-id will b
 
 set hidden " this is needed because if this is not enabled some functions which open new window (e.g. go to implementation) throw error if current buffer is unsaved
 
+set tabstop=4 " tab should equal 4 spaces
+set shiftwidth=4
+set expandtab " change tab to spaces
+
 set so=999 " this sets scrolloff to big number which results in vim trying to position cursor in the middle of the screen (verticaly)
 
 " Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>lua require('findall').find_all(require('telescope.themes').get_dropdown({}))<cr>
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <C-e> <cmd>Telescope file_browser<cr>
 nnoremap <C-f> <cmd>Telescope live_grep<cr>
