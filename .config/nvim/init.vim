@@ -52,7 +52,7 @@ let mapleader = " "
 nnoremap <leader>fa <cmd>lua require('findall').find_all(require('telescope.themes').get_dropdown({}))<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fif <cmd>Telescope live_grep<cr>
-nnoremap <leader>e <cmd>Telescope file_browser<cr>
+nnoremap <leader>e <cmd>NvimTreeFindFileToggle<cr>
 nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
 
 " vim-go settings
