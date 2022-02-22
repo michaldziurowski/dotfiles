@@ -11,7 +11,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'rafamadriz/friendly-snippets'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons' " this has to be last one
@@ -54,9 +53,6 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fif <cmd>Telescope live_grep<cr>
 nnoremap <leader>e <cmd>NvimTreeFindFileToggle<cr>
 nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
-
-" vim-go settings
-let g:go_list_type = "quickfix"
 
 lua require("nvim-tree-cfg")
 lua require("lsp-config")
