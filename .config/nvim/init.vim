@@ -47,12 +47,25 @@ set autowrite " writes the content authomatically if :make is called - vim-go us
 
 let mapleader = " "
 
+nnoremap <leader>e <cmd>NvimTreeFindFileToggle<cr>
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>fa <cmd>lua require('findall').find_all(require('telescope.themes').get_dropdown({}))<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fif <cmd>Telescope live_grep<cr>
-nnoremap <leader>e <cmd>NvimTreeFindFileToggle<cr>
 nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
+
+" auto close brackets, parenthesis etc
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap <expr> } strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
 
 lua require("nvim-tree-cfg")
 lua require("lsp-config")
