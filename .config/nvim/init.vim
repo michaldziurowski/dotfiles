@@ -16,6 +16,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'ryanoasis/vim-devicons' " this has to be last one
 call plug#end()
 
+set clipboard=unnamedplus " use clipboard for yanking, see: https://github.com/vscode-neovim/vscode-neovim/issues/298#issuecomment-678750512
+
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
