@@ -49,6 +49,8 @@ set autowrite " writes the content authomatically if :make is called - vim-go us
 
 let mapleader = " "
 
+set splitbelow " opens horisontal split below instead of on top 
+
 nnoremap <leader>e <cmd>NvimTreeFindFileToggle<cr>
 
 " Find files using Telescope command-line sugar.
@@ -56,6 +58,7 @@ nnoremap <leader>fa <cmd>lua require('findall').find_all(require('telescope.them
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fif <cmd>Telescope live_grep<cr>
 nnoremap <leader>fr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 " auto close brackets, parenthesis etc
 inoremap ( ()<left>
@@ -71,6 +74,7 @@ inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\
 
 lua require("nvim-tree-cfg")
 lua require("lsp-config")
+lua require("go-extensions")
 
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.go lua goimports(1000)

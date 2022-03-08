@@ -1,0 +1,6 @@
+function TestMethod()
+    local currentDirPath = vim.api.nvim_exec("echo expand('%:p:h')", true)
+    local currentMethodName = vim.api.nvim_exec("echo expand('<cword>')", true)
+    local command = "sp | te (cd " .. currentDirPath  .. " && go test --run " .. currentMethodName .. ")"
+    vim.api.nvim_exec(command, true)
+end
