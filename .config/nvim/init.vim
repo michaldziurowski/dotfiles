@@ -43,8 +43,6 @@ set tabstop=4 " tab should equal 4 spaces
 set shiftwidth=4
 set expandtab " change tab to spaces
 
-set so=999 " this sets scrolloff to big number which results in vim trying to position cursor in the middle of the screen (verticaly)
-
 set autowrite " writes the content authomatically if :make is called - vim-go uses this to write on test or build
 
 let mapleader = " "
