@@ -34,6 +34,8 @@ set termguicolors " recommended by colorscheme to use truecolors (colors more vi
 
 set encoding=utf8
 
+set so=999 " this sets scrolloff to big number which results in vim trying to position cursor in the middle of the screen (verticaly)
+
 set number relativenumber " show relative numbers but in current row show actual row number instead of 0
 set iskeyword+=- " treat - as a part of word  the same as _ so eg this-id will be a word userful for selections
 
