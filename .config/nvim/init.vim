@@ -49,6 +49,8 @@ let mapleader = " "
 
 set splitbelow " opens horisontal split below instead of on top 
 
+set cursorline " highlight current row
+
 nnoremap <leader>e <cmd>NvimTreeFindFileToggle<cr>
 
 " Find files using Telescope command-line sugar.
