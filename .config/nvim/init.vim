@@ -55,6 +55,8 @@ set cursorline " highlight current row
 
 nnoremap <leader>e <cmd>NvimTreeFindFileToggle<cr>
 
+nnoremap <leader>tm <cmd>lua require('go-extensions').testMethodUnderCursor()<cr>
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>fa <cmd>lua require('findall').find_all(require('telescope.themes').get_dropdown({}))<cr>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
