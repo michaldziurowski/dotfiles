@@ -146,7 +146,7 @@ require('telescope').load_extension('fzf')
 
 -- treesitter config
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained",
+    ensure_installed = {"bash", "go", "gomod", "graphql", "html", "hcl", "javascript", "json", "lua", "make", "markdown", "typescript", "yaml"},
     highlight = {enable = true, additional_vim_regex_hihlighting = false}
 }
 
@@ -159,7 +159,7 @@ require('nvim-lightbulb').setup({autocmd = {enabled = true}})
 function goimports(timeoutms)
     local params = vim.lsp.util.make_range_params()
     params.context = {only = {"source.organizeImports"}}
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeoutms)
     for _, res in pairs(result or {}) do
       for _, r in pairs(res.result or {}) do
         if r.edit then
