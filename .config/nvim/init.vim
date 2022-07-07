@@ -14,6 +14,10 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'rafamadriz/friendly-snippets'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'j-hui/fidget.nvim'
+Plug 'kosayoda/nvim-lightbulb'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'weilbith/nvim-code-action-menu'
 Plug 'ryanoasis/vim-devicons' " this has to be last one
 call plug#end()
 
