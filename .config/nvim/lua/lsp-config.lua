@@ -67,8 +67,6 @@ nvim_lsp["tsserver"].setup({
     root_dir = nvim_lsp.util.root_pattern('.git')
 })
 
-nvim_lsp["html"].setup {capabilities = capabilities, on_attach = on_attach}
-
 nvim_lsp["terraformls"].setup({capabilities = capabilities, on_attach = on_attach})
 nvim_lsp["graphql"].setup({capabilities = capabilities, on_attach = on_attach})
 nvim_lsp["sumneko_lua"].setup({
@@ -93,10 +91,15 @@ nvim_lsp["efm"].setup({
         rootMarkers = {".git/"},
         languages = {
             lua = {{formatCommand = "lua-format -i --column-limit=120", formatStdin = true}},
-            html = {{formatCommand = "./node_modules/.bin/prettier ${--tab-width:tabWidth} ${--single-quote:singleQuote} --parser html"}}
         },
     },
-    filetypes = { 'lua', 'html' }
+    filetypes = { 'lua' }
+})
+
+-- install: npm i -g vscode-langservers-extracted
+nvim_lsp["html"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 -- vim.lsp.set_log_level("debug")
