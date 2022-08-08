@@ -58,6 +58,6 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", opts)
 
 -- My go extensions
-keymap("n", "<leader>tm", "<cmd>lua require('my.go-extensions').testMethodUnderCursor()", opts)
-keymap("n", "<leader>tp", "<cmd>lua require('my.go-extensions').testPackageUnderCursor()", opts)
+keymap("n", "<leader>tm", "<cmd>lua require('my.go-extensions').testMethodUnderCursor()<cr>", opts)
+keymap("n", "<leader>tp", "<cmd>lua require('my.go-extensions').testPackageUnderCursor()<cr>", opts)
 
