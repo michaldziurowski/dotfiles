@@ -8,6 +8,7 @@ require "my.nvim-tree"
 require "my.treesitter"
 require "my.autopairs"
 require "my.nvim-lightbulb"
+require "my.lualine"
 
 -- move it somewhere
 vim.cmd([[
