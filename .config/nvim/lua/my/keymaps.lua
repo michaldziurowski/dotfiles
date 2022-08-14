@@ -61,3 +61,13 @@ keymap("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", opts)
 keymap("n", "<leader>tm", "<cmd>lua require('my.go-extensions').testMethodUnderCursor()<cr>", opts)
 keymap("n", "<leader>tp", "<cmd>lua require('my.go-extensions').testPackageUnderCursor()<cr>", opts)
 
+-- Debugging
+keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
+keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<cr>", opts)
+keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
