@@ -107,6 +107,9 @@ return packer.startup(function(use)
     use 'leoluz/nvim-dap-go'
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
+    -- nvim-go (run :GoInstallBinaries after plugin installed)
+    use 'crispgm/nvim-go'
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
