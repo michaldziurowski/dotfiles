@@ -57,9 +57,9 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 -- NvimTree
 keymap("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", opts)
 
--- My go extensions
-keymap("n", "<leader>tm", "<cmd>lua require('my.go-extensions').testMethodUnderCursor()<cr>", opts)
-keymap("n", "<leader>tp", "<cmd>lua require('my.go-extensions').testPackageUnderCursor()<cr>", opts)
+-- My Go keymaps
+keymap("n", "<leader>tm", "<cmd>GoTestFunc<cr>", opts)
+keymap("n", "<leader>tf", "<cmd>GoTestFile<cr>", opts)
 
 -- Debugging
 keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
