@@ -107,6 +107,12 @@ return packer.startup(function(use)
     use 'leoluz/nvim-dap-go'
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
+    -- Null-ls - adapt some stuff to lsp
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
     -- nvim-go (run :GoInstallBinaries after plugin installed)
     use 'crispgm/nvim-go'
 

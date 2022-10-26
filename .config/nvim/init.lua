@@ -11,4 +11,4 @@ require "my.nvim-lightbulb"
 require "my.lualine"
 require "my.dap"
 require "my.nvim-go"
-
+require "my.null-ls"
