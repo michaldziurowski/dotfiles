@@ -121,6 +121,9 @@ return packer.startup(function(use)
         require('git-conflict').setup()
     end }
 
+    -- markdown preview
+    use {"ellisonleao/glow.nvim"}
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
