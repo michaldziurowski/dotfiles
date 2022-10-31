@@ -46,8 +46,7 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
-    use "morhetz/gruvbox" -- colorscheme
-
+    use "sainnhe/gruvbox-material" -- colorscheme with tree-sitter support
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
