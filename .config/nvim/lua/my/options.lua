@@ -37,7 +37,7 @@ local options = {
     scrolloff = 8, -- is one of my fav
     sidescrolloff = 8,
     guifont = "monospace:h17", -- the font used in graphical neovim applications
-    so = 999, -- this sets scrolloff to big number which results in vim trying to position cursor in the middle of the screen (verticaly)
+    -- so = 999, -- this sets scrolloff to big number which results in vim trying to position cursor in the middle of the screen (verticaly)
     hidden = true -- this is needed because if this is not enabled some functions which open new window (e.g. go to implementation) throw error if current buffer is unsaved
 }
 
