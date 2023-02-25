@@ -1,8 +1,7 @@
-local colorscheme = "gruvbox-material"
+local colorscheme = "everforest"
 
-vim.g.gruvbox_material_foreground = "material"
-vim.g.gruvbox_material_background = "medium"
-vim.g.gruvbox_material_better_performance = 1
+vim.g.everforest_background = "medium"
+vim.g.everforest_better_performance = 1
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then

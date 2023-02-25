@@ -46,7 +46,7 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
-    use "sainnhe/gruvbox-material" -- colorscheme with tree-sitter support
+    use 'sainnhe/everforest' --colorscheme
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -121,7 +121,7 @@ return packer.startup(function(use)
     end }
 
     -- markdown preview
-    use {"ellisonleao/glow.nvim"}
+    use { "ellisonleao/glow.nvim" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

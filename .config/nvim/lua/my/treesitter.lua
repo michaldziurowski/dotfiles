@@ -129,4 +129,4 @@ local function nvim_hl()
 
 end
 
-nvim_hl()
+--nvim_hl()

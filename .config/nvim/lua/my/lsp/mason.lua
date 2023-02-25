@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "golangci_lint_ls", "tsserver", "sumneko_lua" },
+    ensure_installed = { "gopls", "golangci_lint_ls", "tsserver", "lua_ls" },
 })
 
 local opts = {
@@ -15,7 +15,6 @@ require("mason-lspconfig").setup_handlers {
     function(server_name) -- default handler (optional)
         require("lspconfig")[server_name].setup(opts)
     end,
-    -- For example, a handler override for the `rust_analyzer`:
     ["gopls"] = function()
         local gopls_opts = vim.tbl_deep_extend("force", { settings = {
             gopls = {
@@ -33,21 +32,4 @@ require("mason-lspconfig").setup_handlers {
         } }, opts)
         require("lspconfig")["gopls"].setup(gopls_opts)
     end,
-    ["sumneko_lua"] = function()
-        local lua_opts = vim.tbl_deep_extend("force", { settings = {
-            Lua = {
-                diagnostics = {
-                    globals = { "vim" },
-                },
-                workspace = {
-                    library = {
-                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                        [vim.fn.stdpath("config") .. "/lua"] = true,
-                    },
-                },
-            },
-        } }, opts)
-        require("lspconfig")["sumneko_lua"].setup(lua_opts)
-    end
-
 }
