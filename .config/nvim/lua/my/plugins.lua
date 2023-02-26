@@ -123,6 +123,24 @@ return packer.startup(function(use)
     -- markdown preview
     use { "ellisonleao/glow.nvim" }
 
+    -- show indentiations
+    use "lukas-reineke/indent-blankline.nvim"
+
+    -- git blame and stuff
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup {
+                current_line_blame = true,
+                current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+            }
+        end
+    }
+
+    -- git diff display
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
