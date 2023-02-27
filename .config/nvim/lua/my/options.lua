@@ -38,7 +38,10 @@ local options = {
     sidescrolloff = 8,
     guifont = "monospace:h17", -- the font used in graphical neovim applications
     -- so = 999, -- this sets scrolloff to big number which results in vim trying to position cursor in the middle of the screen (verticaly)
-    hidden = true -- this is needed because if this is not enabled some functions which open new window (e.g. go to implementation) throw error if current buffer is unsaved
+    hidden = true, -- this is needed because if this is not enabled some functions which open new window (e.g. go to implementation) throw error if current buffer is unsaved
+    foldmethod = "expr",
+    foldexpr = "nvim_treesitter#foldexpr()", -- fold by treesitter
+    foldlevelstart = 99, -- when opening a file don't fold 
 }
 
 for k, v in pairs(options) do
@@ -49,3 +52,4 @@ vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
+
