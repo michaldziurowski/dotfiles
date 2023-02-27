@@ -62,7 +62,7 @@ keymap("n", "<leader>tm", "<cmd>GoTestFunc<cr>", opts)
 keymap("n", "<leader>tf", "<cmd>GoTestFile<cr>", opts)
 
 -- Debugging
-keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<cr>", opts)
+keymap("n", "<F5>", "<cmd>GoDebug<cr>", opts)
 keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", opts)

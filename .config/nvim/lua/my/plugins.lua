@@ -101,19 +101,20 @@ return packer.startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- Debugger
+    -- dap - debugger required by go.nvim
     use 'mfussenegger/nvim-dap'
-    use 'leoluz/nvim-dap-go'
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
+
+    -- go.nvim - run GoInstallBinaries after first introduction of this plugin
+    use 'ray-x/go.nvim'
+    use 'ray-x/guihua.lua' -- recommended if need floating window support
 
     -- Null-ls - adapt some stuff to lsp
     use {
         'jose-elias-alvarez/null-ls.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-
-    -- nvim-go (run :GoInstallBinaries after plugin installed)
-    use 'crispgm/nvim-go'
 
     -- git merge conflict resolution
     use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
