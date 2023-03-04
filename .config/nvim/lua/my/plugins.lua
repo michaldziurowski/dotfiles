@@ -103,6 +103,7 @@ return packer.startup(function(use)
 
     -- dap - debugger required by go.nvim
     use 'mfussenegger/nvim-dap'
+    -- config for dap ui is done in gonvim.lua setup under dap_debug_gui param
     use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text'
 
