@@ -111,6 +111,13 @@ return packer.startup(function(use)
     use 'ray-x/go.nvim'
     use 'ray-x/guihua.lua' -- recommended if need floating window support
 
+    use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+}
     -- Null-ls - adapt some stuff to lsp
     use {
         'jose-elias-alvarez/null-ls.nvim',

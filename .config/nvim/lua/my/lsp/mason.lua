@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "golangci_lint_ls", "tsserver", "lua_ls" },
+    ensure_installed = { "gopls", "golangci_lint_ls", "tsserver", "lua_ls", "html" },
 })
 
 local opts = {
@@ -15,21 +15,26 @@ require("mason-lspconfig").setup_handlers {
     function(server_name) -- default handler (optional)
         require("lspconfig")[server_name].setup(opts)
     end,
-    ["gopls"] = function()
-        local gopls_opts = vim.tbl_deep_extend("force", { settings = {
-            gopls = {
-                analyses = {
-                    nilness = true,
-                    unusedparams = true,
-                    unusedwrite = true,
-                    useany = true,
+
+        ["gopls"] = function()
+        local gopls_opts = vim.tbl_deep_extend("force", {
+            filetypes = { "go", "gomod", "gowork", "gotmpl", "html" },
+            settings = {
+                gopls = {
+                    analyses = {
+                        nilness = true,
+                        unusedparams = true,
+                        unusedwrite = true,
+                        useany = true,
+                    },
+                    experimentalPostfixCompletions = true,
+                    gofumpt = true,
+                    staticcheck = true,
+                    usePlaceholders = true,
+                    templateExtensions = { "html" },
                 },
-                experimentalPostfixCompletions = true,
-                gofumpt = true,
-                staticcheck = true,
-                usePlaceholders = true,
-            },
-        } }, opts)
+            }
+        }, opts)
         require("lspconfig")["gopls"].setup(gopls_opts)
     end,
 }
