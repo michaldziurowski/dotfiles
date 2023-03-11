@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "gopls", "golangci_lint_ls", "tsserver", "lua_ls", "html" },
+    ensure_installed = { "gopls", "golangci_lint_ls", "tsserver", "lua_ls", "html", "pyright" },
 })
 
 local opts = {
