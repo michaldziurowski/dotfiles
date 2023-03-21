@@ -28,7 +28,7 @@ require("mason-lspconfig").setup_handlers {
                         useany = true,
                     },
                     experimentalPostfixCompletions = true,
-                    gofumpt = true,
+                    gofumpt = false,
                     staticcheck = true,
                     usePlaceholders = true,
                     templateExtensions = { "html" },

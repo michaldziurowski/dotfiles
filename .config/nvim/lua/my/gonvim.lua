@@ -1,4 +1,6 @@
 require('go').setup({
+    gofmt = "gopls",
+    lsp_gofumpt = false,
     dap_debug_gui = {
         layouts = {
             {
