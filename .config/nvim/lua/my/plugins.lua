@@ -132,6 +132,9 @@ return packer.startup(function(use)
     -- markdown preview
     use { "ellisonleao/glow.nvim" }
 
+    -- auto close html tags
+    use { "windwp/nvim-ts-autotag"}
+
     -- show indentiations
     use "lukas-reineke/indent-blankline.nvim"
 
