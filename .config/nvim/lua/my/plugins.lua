@@ -105,7 +105,6 @@ return packer.startup(function(use)
     use 'mfussenegger/nvim-dap'
     -- config for dap ui is done in gonvim.lua setup under dap_debug_gui param
     use 'rcarriga/nvim-dap-ui'
-    use 'theHamsta/nvim-dap-virtual-text'
 
     -- go.nvim - run GoInstallBinaries after first introduction of this plugin
     use 'ray-x/go.nvim'

@@ -5,15 +5,7 @@ require('go').setup({
         layouts = {
             {
                 elements = {
-                    "scopes",
-                },
-                size = 0.3,
-                position = "right"
-            },
-            {
-                elements = {
-                    "repl",
-                    "breakpoints"
+                    "repl"
                 },
                 size = 0.3,
                 position = "bottom",
