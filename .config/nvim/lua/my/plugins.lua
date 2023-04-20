@@ -1,42 +1,42 @@
 -- Automatically install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins =  {
-    "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+local plugins = {
+    "nvim-lua/popup.nvim",   -- An implementation of the Popup API from vim in Neovim
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
     "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 
-    'sainnhe/everforest', --colorscheme
+    'sainnhe/everforest',    --colorscheme
 
     -- cmp plugins
-    "hrsh7th/nvim-cmp", -- The completion plugin
-    "hrsh7th/cmp-buffer", -- buffer completions
-    "hrsh7th/cmp-path", -- path completions
-    "hrsh7th/cmp-cmdline", -- cmdline completions
+    "hrsh7th/nvim-cmp",         -- The completion plugin
+    "hrsh7th/cmp-buffer",       -- buffer completions
+    "hrsh7th/cmp-path",         -- path completions
+    "hrsh7th/cmp-cmdline",      -- cmdline completions
     "saadparwaiz1/cmp_luasnip", -- snippet completions
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
 
     -- snippets
-    "L3MON4D3/LuaSnip", --snippet engine
+    "L3MON4D3/LuaSnip",             --snippet engine
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
     -- LSP
     "williamboman/mason.nvim", -- simple to use language server installer
     "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig", -- enable LSP
-    "j-hui/fidget.nvim", -- spinner for lsp progress
+    "neovim/nvim-lspconfig",   -- enable LSP
+    "j-hui/fidget.nvim",       -- spinner for lsp progress
 
     -- Lightbulb
     {
@@ -46,7 +46,8 @@ local plugins =  {
 
     -- Telescope
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -82,12 +83,12 @@ local plugins =  {
     'ray-x/guihua.lua', -- recommended if need floating window support
 
     {
-    "ThePrimeagen/refactoring.nvim",
-    dependencies = {
-        {"nvim-lua/plenary.nvim"},
-        {"nvim-treesitter/nvim-treesitter"}
+        "ThePrimeagen/refactoring.nvim",
+        dependencies = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        },
     },
-},
     -- Null-ls - adapt some stuff to lsp
     {
         'jose-elias-alvarez/null-ls.nvim',
@@ -95,15 +96,18 @@ local plugins =  {
     },
 
     -- git merge conflict resolution
-    { 'akinsho/git-conflict.nvim',  config = function()
-        require('git-conflict').setup()
-    end },
+    {
+        'akinsho/git-conflict.nvim',
+        config = function()
+            require('git-conflict').setup()
+        end
+    },
 
     -- markdown preview
     { "ellisonleao/glow.nvim" },
 
     -- auto close html tags
-    { "windwp/nvim-ts-autotag"},
+    { "windwp/nvim-ts-autotag" },
 
     -- show indentiations
     "lukas-reineke/indent-blankline.nvim",
