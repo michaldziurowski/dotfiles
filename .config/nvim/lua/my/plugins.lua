@@ -125,6 +125,9 @@ local plugins = {
 
     -- git diff display
     { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+
+    -- toggle term
+    {'akinsho/toggleterm.nvim', version = "*", config = true}
 }
 -- Install your plugins here
 require("lazy").setup(plugins)

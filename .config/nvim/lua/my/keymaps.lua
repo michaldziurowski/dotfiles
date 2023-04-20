@@ -33,6 +33,7 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 
 keymap("v", "p", '"_dP', opts) -- this is kind of important one, when you yank and then paste on visual it allows you to keep what you originaly yanked instead of replacing it with what was in selection
 
+keymap("n", "<C-\\>", "<cmd>ToggleTerm direction=float<cr>", opts)
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
