@@ -60,8 +60,8 @@ keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", opts)
 
 -- My Go keymaps
-keymap("n", "<leader>tm", "<cmd>GoTestFunc<cr>", opts)
-keymap("n", "<leader>tf", "<cmd>GoTestFile<cr>", opts)
+keymap("n", "<leader>tm", "<cmd>lua require('neotest').run.run()<cr>", opts)
+keymap("n", "<leader>tf", "<cmd> lua require('neotest').summary.open()<cr> <bar><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", opts)
 
 -- Debugging
 keymap("n", "<F5>", "<cmd>GoDebug<cr>", opts)

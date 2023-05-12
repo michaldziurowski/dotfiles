@@ -5,9 +5,14 @@ require("neotest").setup({
         require("neotest-go"),
     },
     summary = {
-        enabled = true
+        enabled = true,
+        follow = true,
+        expand_errors = true
     },
     diagnostic = {
+        enabled = true
+    },
+    quickfix = {
         enabled = false
     },
     output = {

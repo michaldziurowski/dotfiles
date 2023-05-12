@@ -88,7 +88,7 @@ local plugins = {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
             "antoinemadec/FixCursorHold.nvim",
-            "michaldziurowski/neotest-go",
+            "nvim-neotest/neotest-go",
         }
     },
 
