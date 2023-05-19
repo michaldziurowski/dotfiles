@@ -13,30 +13,30 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+    "nvim-lua/popup.nvim",   -- An implementation of the Popup API from vim in Neovim
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
     "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 
-    'sainnhe/everforest', --colorscheme
+    'sainnhe/everforest',    --colorscheme
 
     -- cmp plugins
-    "hrsh7th/nvim-cmp", -- The completion plugin
-    "hrsh7th/cmp-buffer", -- buffer completions
-    "hrsh7th/cmp-path", -- path completions
-    "hrsh7th/cmp-cmdline", -- cmdline completions
+    "hrsh7th/nvim-cmp",         -- The completion plugin
+    "hrsh7th/cmp-buffer",       -- buffer completions
+    "hrsh7th/cmp-path",         -- path completions
+    "hrsh7th/cmp-cmdline",      -- cmdline completions
     "saadparwaiz1/cmp_luasnip", -- snippet completions
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-nvim-lua",
 
     -- snippets
-    "L3MON4D3/LuaSnip", --snippet engine
+    "L3MON4D3/LuaSnip",             --snippet engine
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
     -- LSP
     "williamboman/mason.nvim", -- simple to use language server installer
     "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig", -- enable LSP
-    "j-hui/fidget.nvim", -- spinner for lsp progress
+    "neovim/nvim-lspconfig",   -- enable LSP
+    "j-hui/fidget.nvim",       -- spinner for lsp progress
 
     -- Lightbulb
     {
@@ -134,10 +134,23 @@ local plugins = {
     },
 
     -- git diff display
-    { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+    { 'sindrets/diffview.nvim',  dependencies = 'nvim-lua/plenary.nvim' },
 
     -- toggle term
-    { 'akinsho/toggleterm.nvim', version = "*", config = true }
+    { 'akinsho/toggleterm.nvim', version = "*",                         config = true },
+
+    -- which key
+    {
+        {
+            "folke/which-key.nvim",
+            config = function()
+                vim.o.timeout = true
+                vim.o.timeoutlen = 500
+                require("which-key").setup({
+                })
+            end,
+        },
+    }
 }
 -- Install your plugins here
 require("lazy").setup(plugins)

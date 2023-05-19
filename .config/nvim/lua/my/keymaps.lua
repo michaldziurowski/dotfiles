@@ -51,23 +51,26 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("t", "<ESC>", "<C-\\><C-n>", term_opts)
 
 -- Telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>fif", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>fr", "<cmd>Telescope lsp_references<cr>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true, desc = "[f]ind [f]iles" })
+keymap("n", "<leader>fif", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true, desc = "[f]ind [i]n [f]iles" })
+keymap("n", "<leader>fr", "<cmd>Telescope lsp_references<cr>",
+{ noremap = true, silent = true, desc = "[f]ind [r]eferences" })
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true, desc = "[f]ind [b]uffers" })
 
 -- NvimTree
-keymap("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", opts)
+keymap("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", { noremap = true, silent = true, desc = "[e]xpand nvim tree" })
 
 -- My Go keymaps
-keymap("n", "<leader>tm", "<cmd>lua require('neotest').run.run()<cr>", opts)
-keymap("n", "<leader>tf", "<cmd> lua require('neotest').summary.open()<cr> <bar><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", opts)
+keymap("n", "<leader>tm", "<cmd>lua require('neotest').run.run()<cr>",
+{ noremap = true, silent = true, desc = "[t]est [m]ethod" })
+keymap("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
+{ noremap = true, silent = true, desc = "[t]est [f]ile" })
 
 -- Debugging
 keymap("n", "<F5>", "<cmd>GoDebug<cr>", opts)
 keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<cr>", opts)
+keymap("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>",{ noremap = true, silent = true, desc = "toggle [b]reakpoint" })
+keymap("n", "<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",{ noremap = true, silent = true, desc = "toggle [B]reakpoint with condition" })
+keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<cr>",{ noremap = true, silent = true, desc = "open [d]ebug [r]epl" })
