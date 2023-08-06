@@ -36,7 +36,11 @@ local plugins = {
     "williamboman/mason.nvim", -- simple to use language server installer
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",   -- enable LSP
-    "j-hui/fidget.nvim",       -- spinner for lsp progress
+    {
+        "j-hui/fidget.nvim",   -- spinner for lsp progress
+        tag = "legacy",
+        event = "LspAttach",
+    },
 
     -- Lightbulb
     {
@@ -153,7 +157,14 @@ local plugins = {
     },
 
     -- undotree
-    {"mbbill/undotree"}
+    { "mbbill/undotree" },
+
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 }
 -- Install your plugins here
 require("lazy").setup(plugins)
