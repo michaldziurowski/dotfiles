@@ -41,7 +41,6 @@ local plugins = {
         tag = "legacy",
         event = "LspAttach",
     },
-
     -- Lightbulb
     {
         'kosayoda/nvim-lightbulb',
