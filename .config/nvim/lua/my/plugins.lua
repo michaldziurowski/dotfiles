@@ -150,7 +150,10 @@ local plugins = {
                 })
             end,
         },
-    }
+    },
+
+    -- undotree
+    {"mbbill/undotree"}
 }
 -- Install your plugins here
 require("lazy").setup(plugins)
