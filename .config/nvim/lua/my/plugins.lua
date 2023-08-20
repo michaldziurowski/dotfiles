@@ -33,11 +33,11 @@ local plugins = {
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
     -- LSP
-    "williamboman/mason.nvim", -- simple to use language server installer
+    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",   -- enable LSP
+    "neovim/nvim-lspconfig", -- enable LSP
     {
-        "j-hui/fidget.nvim",   -- spinner for lsp progress
+        "j-hui/fidget.nvim", -- spinner for lsp progress
         tag = "legacy",
         event = "LspAttach",
     },
@@ -80,6 +80,16 @@ local plugins = {
     'mfussenegger/nvim-dap',
     -- config for dap ui is done in gonvim.lua setup under dap_debug_gui param
     'rcarriga/nvim-dap-ui',
+    {
+        "mfussenegger/nvim-dap-python",
+        config = function()
+            local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+            pcall(function()
+                -- debugpy installed thorugh mason (:Mason find debugpy and install)
+                require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
+            end)
+        end
+    },
 
     -- go.nvim - run GoInstallBinaries after first introduction of this plugin
     'ray-x/go.nvim',
