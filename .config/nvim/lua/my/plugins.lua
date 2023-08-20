@@ -35,6 +35,23 @@ local plugins = {
     -- LSP
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = "williamboman/mason.nvim",
+        config = function()
+            require('mason-tool-installer').setup({
+                ensure_installed = {
+                    -- python formatter
+                    "black",
+                    -- python linter/diagnostics
+                    "flake8",
+                    -- python debugger
+                    "debugpy"
+                },
+                run_on_start = true
+            })
+        end
+    },
     "neovim/nvim-lspconfig", -- enable LSP
     {
         "j-hui/fidget.nvim", -- spinner for lsp progress
@@ -85,7 +102,6 @@ local plugins = {
         config = function()
             local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
             pcall(function()
-                -- debugpy installed thorugh mason (:Mason find debugpy and install)
                 require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
             end)
         end

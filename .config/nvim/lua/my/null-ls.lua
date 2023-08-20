@@ -5,9 +5,9 @@ null_ls.setup({
     sources = {
         null_ls.builtins.formatting.jq,
         null_ls.builtins.formatting.prettier,
-        -- python formatter - installed thorugh Mason (:Mason and then find black and install)
+        -- python formatter
         null_ls.builtins.formatting.black,
-        -- python diagnostics - installed thoruhg Mason (:Mason and then find flake8 and install) 
+        -- python linting/diagnostics
         null_ls.builtins.diagnostics.flake8,
     },
     on_attach = function(client, bufnr)
