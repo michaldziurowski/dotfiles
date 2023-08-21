@@ -65,6 +65,10 @@ keymap("n", "<leader>tm", "<cmd>lua require('neotest').run.run()<cr>",
 { noremap = true, silent = true, desc = "[t]est [m]ethod" })
 keymap("n", "<leader>tf", "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
 { noremap = true, silent = true, desc = "[t]est [f]ile" })
+keymap("n", "<leader>ts", "<cmd>lua require('neotest').summary.toggle()<cr>",
+{ noremap = true, silent = true, desc = "[t]est [s]ummary toggle" })
+keymap("n", "<leader>to", "<cmd>lua require('neotest').output_panel.toggle()<cr>",
+{ noremap = true, silent = true, desc = "[t]est [o]utput panel toggle" })
 
 -- Debugging
 keymap("n", "<F5>", "<cmd>GoDebug<cr>", opts)
@@ -74,3 +78,4 @@ keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>",{ noremap = true, silent = true, desc = "toggle [b]reakpoint" })
 keymap("n", "<leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",{ noremap = true, silent = true, desc = "toggle [B]reakpoint with condition" })
 keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<cr>",{ noremap = true, silent = true, desc = "open [d]ebug [r]epl" })
+keymap("n", "<leader>dw", "<cmd>lua require'dapui'.float_element('watches')<cr>",{ noremap = true, silent = true, desc = "open [d]ebug [w]atches" })
