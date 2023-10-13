@@ -163,10 +163,14 @@ local plugins = {
     },
 
     -- git diff display
-    { 'sindrets/diffview.nvim',  dependencies = 'nvim-lua/plenary.nvim' },
+    { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
 
     -- toggle term
-    { 'akinsho/toggleterm.nvim', version = "*",                         config = true },
+    {
+        'akinsho/toggleterm.nvim',
+        version = "*",
+        config = true
+    },
 
     -- which key
     {
@@ -189,7 +193,35 @@ local plugins = {
         config = function()
             require('Comment').setup()
         end
-    }
+    },
+
+    {
+        'kristijanhusak/vim-dadbod-ui',
+        dependencies = {
+            { 'tpope/vim-dadbod',                     lazy = true },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+        },
+        cmd = {
+            'DBUI',
+            'DBUIToggle',
+            'DBUIAddConnection',
+            'DBUIFindBuffer',
+        },
+        init = function()
+            -- Your DBUI configuration
+            vim.g.db_ui_use_nerd_fonts = 1
+            vim.g.db_ui_auto_execute_table_helpers = 1
+            vim.g.db_ui_table_helpers = {
+                sqlite = {
+                    Schema = 'PRAGMA table_info({table})'
+                }
+            }
+        end,
+    },
+
+    {
+        'stevearc/dressing.nvim',
+    },
 }
 -- Install your plugins here
 require("lazy").setup(plugins)
