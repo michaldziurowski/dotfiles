@@ -1,5 +1,6 @@
 local uv = vim.loop
 
+-- reading env file was taken from https://github.com/ellisonleao/dotenv.nvim/blob/main/lua/dotenv.lua
 local function read_file(path)
   local fd = assert(uv.fs_open(path, "r", 438))
   local stat = assert(uv.fs_fstat(fd))
@@ -45,7 +46,7 @@ end
 
 local function load_env_vars(file)
   if file == nil then
-    local envFileName = vim.fn.input("Env file name: ")
+    local envFileName = vim.fn.input({ prompt = "Env file name: ", default = "_env_test" })
     file = get_env_file(envFileName)
   end
 

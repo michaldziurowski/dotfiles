@@ -18,15 +18,15 @@ return {
 
     opts = function(_, opts)
       local nls = require("null-ls")
-      local sourcesWithoutGoFumpt = {}
+      local sourcesWithoutGoFormatting = {}
 
       for _, v in ipairs(opts.sources) do
-        if v ~= nls.builtins.formatting.gofumpt then
-          vim.list_extend(sourcesWithoutGoFumpt, { v })
+        if v ~= nls.builtins.formatting.gofumpt and v ~= nls.builtins.formatting.goimports then
+          vim.list_extend(sourcesWithoutGoFormatting, { v })
         end
       end
 
-      opts.sources = sourcesWithoutGoFumpt
+      opts.sources = sourcesWithoutGoFormatting
     end,
   },
   {
