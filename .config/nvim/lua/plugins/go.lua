@@ -7,6 +7,7 @@ return {
           settings = {
             gopls = {
               gofumpt = false,
+              semanticTokens = true,
             },
           },
         },
