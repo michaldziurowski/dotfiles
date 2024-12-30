@@ -1,0 +1,5 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 15
+font-thicken = true
+# diable programming ligatures (e.g. changing != to striked through equals)
+font-feature = -calt
