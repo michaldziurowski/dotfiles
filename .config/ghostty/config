@@ -3,3 +3,6 @@ font-size = 15
 font-thicken = true
 # diable programming ligatures (e.g. changing != to striked through equals)
 font-feature = -calt
+window-decoration = false
+keybind = ctrl+super+w=toggle_window_decorations
+background-opacity = 0.9
