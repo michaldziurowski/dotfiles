@@ -1,3 +1,10 @@
+-- on colorscheme change clear the hihghtlight group for go string so it could take highlight from treesitter (useful if I want to highlight certain strings as html via injections see injections in ~/.config/nvim/queries/go/injections.scm)
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "@lsp.type.string.go", {})
+  end,
+})
+
 return {
   {
     "neovim/nvim-lspconfig",
