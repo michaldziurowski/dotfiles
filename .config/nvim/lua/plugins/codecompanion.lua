@@ -6,6 +6,11 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "j-hui/fidget.nvim",
     },
+    keys = {
+      { "<leader>cct", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle CodeCompanionChat" },
+      { "<leader>cca", "<cmd>CodeCompanionActions<cr>", desc = "Open CodeCompanionActions" },
+      { "<leader>cci", "<cmd>CodeCompanion<cr>", mode = { "n", "v" }, desc = "Open CodeCompanion inline" },
+    },
     opts = {
       strategies = {
         chat = {
@@ -35,7 +40,12 @@ return {
             {
               role = "user",
               condition = function(context)
-                return false
+                local result = vim.fn.system("git diff --no-ext-diff --staged")
+                if result == "" then
+                  return "heyho"
+                else
+                  return true
+                end
               end,
               content = function()
                 return string.format(
