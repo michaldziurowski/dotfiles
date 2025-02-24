@@ -6,10 +6,11 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "j-hui/fidget.nvim",
     },
+    lazy = false,
     keys = {
       { "<leader>cct", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle CodeCompanionChat" },
       { "<leader>cca", "<cmd>CodeCompanionActions<cr>", desc = "Open CodeCompanionActions" },
-      { "<leader>cci", "<cmd>CodeCompanion<cr>", mode = { "n", "v" }, desc = "Open CodeCompanion inline" },
+      { "<leader>cci", "<cmd>'<,'>CodeCompanion<cr>", mode = { "v" }, desc = "Open CodeCompanion inline" },
     },
     opts = {
       strategies = {
