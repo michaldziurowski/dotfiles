@@ -40,7 +40,7 @@ return {
       },
     },
     init = function()
-      require("plugins.codecompanion.fidget-spinner"):init()
+      require("plugins.codecompanionext.fidget-spinner"):init()
     end,
   },
 }
