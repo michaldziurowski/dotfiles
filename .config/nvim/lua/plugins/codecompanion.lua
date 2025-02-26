@@ -27,6 +27,11 @@ return {
                 provider = "snacks",
               },
             },
+            ["symbols"] = {
+              opts = {
+                provider = "snacks",
+              },
+            },
           },
         },
         inline = {
