@@ -8,9 +8,10 @@ return {
     },
     lazy = false,
     keys = {
-      { "<leader>cct", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle CodeCompanionChat" },
-      { "<leader>cca", "<cmd>CodeCompanionActions<cr>", desc = "Open CodeCompanionActions" },
-      { "<leader>cci", "<cmd>'<,'>CodeCompanion<cr>", mode = { "v" }, desc = "Open CodeCompanion inline" },
+      { "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle CodeCompanionChat" },
+      { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "Open CodeCompanionActions" },
+      { "<leader>ai", "<cmd>'<,'>CodeCompanion<cr>", mode = { "v" }, desc = "Open CodeCompanion inline" },
+      { "<leader>ai", "<cmd>CodeCompanion<cr>", mode = { "n" }, desc = "Open CodeCompanion inline" },
     },
     opts = {
       strategies = {
@@ -31,6 +32,17 @@ return {
               opts = {
                 provider = "snacks",
               },
+            },
+          },
+          keymaps = {
+            chat_file_save = {
+              modes = {
+                n = "ms",
+              },
+              callback = function(chat)
+                require("plugins.codecompanionext.chat-file-save").new(chat):save()
+              end,
+              description = "Save chat to file",
             },
           },
         },
