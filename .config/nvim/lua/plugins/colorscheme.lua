@@ -50,7 +50,6 @@ return {
         NeoTreeNormal = { fg = c.fg, bg = c.bg0 },
         NeoTreeNormalNC = { fg = c.fg, bg = c.bg0 },
         NeoTreeEndOfBuffer = { fg = c.bg0, bg = c.bg0 },
-        WinSeparator = { fg = c.fg, bg = c.bg0 },
         FloatBorder = { fg = c.fg, bg = c.bg0 },
         MiniDiffOverAdd = { fg = c.fg, bg = "#537a55" },
         MiniDiffOverDelete = { fg = c.fg, bg = "#b5766d" },
