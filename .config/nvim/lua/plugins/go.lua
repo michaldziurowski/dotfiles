@@ -14,12 +14,21 @@ return {
           settings = {
             gopls = {
               gofumpt = false,
-              semanticTokens = true,
+              semanticTokens = false,
             },
           },
         },
       },
     },
+  },
+  -- https://github.com/ngalaiko/tree-sitter-go-template
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
+        "gotmpl",
+      })
+    end,
   },
   {
     "nvimtools/none-ls.nvim",
@@ -41,9 +50,23 @@ return {
     "stevearc/conform.nvim",
     optional = true,
     opts = {
+      formatters = {
+        gotmplfmt = {
+          command = "prettier",
+          args = function()
+            local obj = vim.system({ "npm", "root", "-g" }, { text = true }):wait()
+            -- { code = 0, signal = 0, stdout = 'hello', stderr = '' }
+            local npmRoot = obj.stdout:gsub("\n$", "")
+            -- first the prettier-plugin-go-template has to be installed globally (npm install -g)
+            local pluginPath = npmRoot .. "/prettier-plugin-go-template/lib/index.js"
+            return { "--plugin=" .. pluginPath, "--parser", "html" }
+          end,
+        },
+      },
       formatters_by_ft = {
         -- removed gofumpt
         go = { "goimports" },
+        gotmpl = { "gotmplfmt" },
       },
     },
   },
