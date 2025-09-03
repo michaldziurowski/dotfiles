@@ -1,12 +1,25 @@
-[font]
-size = 15.0
+general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
 
-[font.normal]
-family = "JetBrainsMono Nerd Font"
+# this is a color override for tokionight omarchy theme so it matches nvim onedark theme
+[colors]
+[colors.primary]
+background = '#2c2d30'
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+bold = { family = "JetBrainsMono Nerd Font" }
+italic = { family = "JetBrainsMono Nerd Font" }
+size = 11
 
 [window]
-opacity = 0.9
+padding.x = 14
+padding.y = 14
+decorations = "None"
 
-[window.padding]
-x = 5
-y = 5
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullscreen" }
+]
